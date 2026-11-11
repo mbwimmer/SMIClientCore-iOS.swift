@@ -20,9 +20,15 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/sqlcipher/SQLCipher.swift.git", from: "4.10.0"),
-        // SMIMultimediaCore links against LiveKitWebRTC; pin the exact version the
-        // prebuilt xcframework was built against (matches mbwimmer/client-sdk-swift).
-        .package(url: "https://github.com/livekit/webrtc-xcframework.git", .exact("137.7151.10"))
+        // SMIMultimediaCore links against LiveKitWebRTC. Source it from the
+        // livekit `client-sdk-swift-xcframework` LiveKit product (2.16.0), whose
+        // bundled LiveKitWebRTC binaryTarget is 144.7559.11 — the single
+        // LiveKitWebRTC version Salesforce1's Podfile.lock resolves (via the
+        // LiveKitClient-XCFramework 2.16.0 pod, shared with AgentforceMono).
+        // This avoids a duplicate `LiveKitWebRTC` target-name collision with the
+        // mono's client-sdk-swift-xcframework; a standalone webrtc-xcframework
+        // 137.7151.10 dep would conflict.
+        .package(url: "https://github.com/livekit/client-sdk-swift-xcframework.git", from: "2.16.0")
     ],
     targets: [
         .binaryTarget(
@@ -55,7 +61,7 @@ let package = Package(
             dependencies: [
                 "SMIMultimediaCore",
                 "SMIMultimediaCommon",
-                .product(name: "LiveKitWebRTC", package: "webrtc-xcframework")
+                .product(name: "LiveKit", package: "client-sdk-swift-xcframework")
             ]
         )
     ]
