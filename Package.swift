@@ -33,18 +33,18 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SMIClientCore",
-            url: "https://salesforce-async-messaging.s3.amazonaws.com/public/ios/1.11.2/SMIClientCore-Release.xcframework.zip",
-            checksum: "39fb8286a4862d86162b188174598125c5b8df6a9a7c15dbf18c0536b2ba645e"
+            url: "https://salesforce-async-messaging.s3.amazonaws.com/public/ios/1.13.3/SMIClientCore-Release.xcframework.zip",
+            checksum: "e7272e79c6a0379cf0d64fb26f270ddee6954970136da9f87598494c9002e453"
         ),
         .binaryTarget(
             name: "SMIMultimediaCommon",
-            url: "https://salesforce-async-messaging.s3.amazonaws.com/public/ios/1.11.2/SMIMultimediaCommon-Release.xcframework.zip",
-            checksum: "4345b7483d266f1312d6799fcccb387859308457028463d5204f3bde2c5a6930"
+            url: "https://salesforce-async-messaging.s3.amazonaws.com/public/ios/1.13.3/SMIMultimediaCommon-Release.xcframework.zip",
+            checksum: "32803c1ca1a5fdab25be51600693d93eeb07eee63f51727f43ec6495ca2be6b5"
         ),
         .binaryTarget(
             name: "SMIMultimediaCore",
-            url: "https://salesforce-async-messaging.s3.amazonaws.com/public/ios/1.11.2/SMIMultimediaCore-Release.xcframework.zip",
-            checksum: "787d96e65e2521c43b9067b3ea13db3fb26d0ab02f3ade1b8f56602e39f2532e"
+            url: "https://salesforce-async-messaging.s3.amazonaws.com/public/ios/1.13.3/SMIMultimediaCore-Release.xcframework.zip",
+            checksum: "d02d53e411efb1ce04f6d4477f6c1ba88f3c6df4a62732053eb1883956a890e4"
         ),
         .target(
             name: "SMIClientCoreWrapper",
